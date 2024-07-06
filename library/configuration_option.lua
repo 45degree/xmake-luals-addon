@@ -2,6 +2,16 @@
 ---[configuration_option](https://xmake.io/#/manual/configuration_option)
 
 ---
+---Define a option
+---
+---[Open in browser](https://xmake.io/#/manual/configuration_option?id=option)
+---
+---@param name string option name
+---@param func? fun(): nil Option scoped function
+---@return nil
+function option(name, func) end
+
+---
 ---Defining options
 ---
 ---[Open in browser](https://xmake.io/#/manual/configuration_option?id=option)

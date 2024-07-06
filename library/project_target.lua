@@ -683,6 +683,17 @@ function add_files(file, ...) end
 ---@return nil
 function add_files(file, option) end
 
+--- ** Scoped: target**
+---
+--- Add extra files
+---
+--- [Open in browser](https://xmake.io/#/manual/project_target?id=targetadd_extrafiles)
+---
+---@param file string File name
+---@vararg string File names
+---@return nil
+function add_extrafiles(file, ...) end
+
 ---
 ---**Scoped: target**
 ---
