@@ -94,7 +94,7 @@ function add_requires(name, ...) end
 ---[Open in browser](https://xmake.io/#/manual/global_interfaces?id=add_requires)
 ---
 ---@param name string Required dependency package name
----@param option? RequiresOption Options
+---@param option RequiresOption? Options
 ---@return nil
 function add_requires(name, option) end
 

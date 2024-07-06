@@ -48,10 +48,10 @@
 
 ---Supported access specifier
 ---@class AccessSpecifier
----@field public public boolean
----@field public private boolean
----@field public inteface boolean
----@field public inherit boolean
+---@field public public boolean?
+---@field public private boolean?
+---@field public interface boolean?
+---@field public inherit boolean?
 
 ---Supported compilation option
 ---@class CompilationOption
@@ -119,23 +119,23 @@
 ---@field dependfiles string[] Get the list of dependent files
 
 ---@class PackageConfig
----@field shared boolean Whether to enable dynamic library
----@field pic boolean Whether to enable pic
----@field vs_runtime Runtime MSVC runtime
+---@field shared boolean? Whether to enable dynamic library
+---@field pic boolean? Whether to enable pic
+---@field vs_runtime Runtime? MSVC runtime
 ---@field [string] any Other package configs
 
 ---@class RequiresOption
----@field optional boolean Whether the package is optional
----@field system boolean Whether to disable same system package
----@field verify boolean Whether to verify this package
----@field debug boolean Whether to enable debug mode
----@field alias string Another name for this package
----@field configs PackageConfig Package configs
+---@field optional boolean? Whether the package is optional
+---@field system boolean? Whether to disable same system package
+---@field verify boolean? Whether to verify this package
+---@field debug boolean? Whether to enable debug mode
+---@field alias string? Another name for this package
+---@field configs PackageConfig? Package configs
 
 ---@class RequireconfsOption
----@field override boolean Whether to override existing configs
----@field version string Package version
----@field configs PackageConfig Package configs
+---@field override boolean? Whether to override existing configs
+---@field version string? Package version
+---@field configs PackageConfig? Package configs
 
 ---@class RepositoriesOption
 ---@field rootdir string Set root directory of repo
