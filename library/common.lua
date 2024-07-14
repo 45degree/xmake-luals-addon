@@ -55,12 +55,12 @@
 
 ---Supported compilation option
 ---@class CompilationOption
----@field rule string
----@field force CompilationOption
----@field defines string
----@field languages LanguageStandard
----@field includedirs string
----@field cflags string
+---@field rule string?
+---@field force CompilationOption?
+---@field defines string?
+---@field languages LanguageStandard?
+---@field includedirs string?
+---@field cflags string?
 
 ---Supported compilation flag attr
 ---@class CompilationFlagAttr

@@ -15,6 +15,7 @@ function path.new(path) end
 --- Stitching Path
 --- 
 --- @param path string|xmake.path path
+--- @vararg string|xmake.path
 --- @return string
 function path.join(path, ...) end
 
