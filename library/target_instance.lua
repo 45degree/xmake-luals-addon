@@ -18,7 +18,7 @@ function Target:name() end
 ---[Open in browser](https://xmake.io/#/manual/target_instance?id=targetget)
 ---
 ---@param key string Key
----@return string
+---@return any
 function Target:get(key) end
 
 ---
@@ -27,9 +27,9 @@ function Target:get(key) end
 ---[Open in browser](https://xmake.io/#/manual/target_instance?id=targetset)
 ---
 ---@param key string Key
----@param value any Value
+---@param ... any Value
 ---@return nil
-function Target:set(key, value) end
+function Target:set(key, ...) end
 
 ---
 ---Add to the values of the target by name
@@ -37,9 +37,9 @@ function Target:set(key, value) end
 ---[Open in browser](https://xmake.io/#/manual/target_instance?id=targetadd)
 ---
 ---@param key string Key
----@param value any Value
+---@param ... any Value
 ---@return nil
-function Target:add(key, value) end
+function Target:add(key, ...) end
 
 ---
 ---Get the target program type
@@ -60,21 +60,21 @@ function Target:kind() end
 function Target:is_plat(platform, ...) end
 
 ---
----Is the current architecture one of the given architectures
+--- Is the current architecture one of the given architectures
 ---
----[Open in browser](https://xmake.io/#/manual/target_instance?id=targetis_arch)
+--- [Open in browser](https://xmake.io/#/manual/target_instance?id=targetis_arch)
 ---
----@param arch Architecture Architecture name
----@param ... Architecture Architecture names
----@return boolean
+--- @param arch Architecture Architecture name
+--- @param ... Architecture Architecture names
+--- @return boolean
 function Target:is_arch(arch, ...) end
 
 ---
----Get the target file path
+--- Get the target file path
 ---
----[Open in browser](https://xmake.io/#/manual/target_instance?id=targettargetfile)
+--- [Open in browser](https://xmake.io/#/manual/target_instance?id=targettargetfile)
 ---
----@return string
+--- @return string
 function Target:targetfile() end
 
 ---
@@ -110,37 +110,45 @@ function Target:filename() end
 function Target:installdir() end
 
 ---
----Get auto-generated catalog
+--- Get auto-generated catalog
 ---
----[Open in browser](https://xmake.io/#/manual/target_instance?id=targetautogendir)
+--- [Open in browser](https://xmake.io/#/manual/target_instance?id=targetautogendir)
 ---
----@return string
+--- @return string
 function Target:autogendir() end
 
 ---
----Get the object file path
+--- Get the object file path
 ---
----[Open in browser](https://xmake.io/#/manual/target_instance?id=targetobjectfile)
+--- [Open in browser](https://xmake.io/#/manual/target_instance?id=targetobjectfile)
 ---
----@param source string Source file name
----@return string
+--- @param source string Source file name
+--- @return string
 function Target:objectfile(source) end
 
 ---
----Get all source files
+--- Get all source files
 ---
----[Open in browser](https://xmake.io/#/manual/target_instance?id=targetsourcebatches)
+--- [Open in browser](https://xmake.io/#/manual/target_instance?id=targetsourcebatches)
 ---
----@return { [string]: SourceBatch }
+--- @return { [string]: SourceBatch }
 function Target:sourcebatches() end
 
 ---
----Get a list of all object files
+--- Get a list of all object files
 ---
----[Open in browser](https://xmake.io/#/manual/target_instance?id=targetobjectfiles)
+--- [Open in browser](https://xmake.io/#/manual/target_instance?id=targetobjectfiles)
 ---
----@return string[]
+--- @return string[]
 function Target:objectfiles() end
+
+---
+--- Get a list of extra files
+---
+--- [Open in browser](https://xmake.io/#/manual/target_instance?id=targetobjectfiles)
+---
+--- @return string[]
+function Target:extrafiles() end
 
 ---
 ---Get a list of all header files

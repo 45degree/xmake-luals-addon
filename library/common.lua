@@ -11,7 +11,7 @@
 ---@alias Subarchitecture string
 
 ---Supported platform
----@alias Platform string|"windows"|"linux"|"macosx"|"android"|"iphoneos"|"watchos"
+---@alias Platform string|"windows"|"linux"|"macosx"|"android"|"iphoneos"|"watchos"|"mingw"|"llvm-mingw"
 
 ---Supported host
 ---@alias Host string|"windows"|"linux"|"macosx"
@@ -190,6 +190,7 @@
 ---@field sourcedir string Source directory
 ---@field url string Package url
 ---@field url_alias string Package url alias
+---@field [string] any Other package options
 
 ---@alias PackageHook fun(package: Package): nil
 ---@alias PackageOptHook fun(package: Package, opt: PackageOpt): nil
@@ -201,7 +202,7 @@
 ---@class PackageConfigDefinition
 ---@field description string Description
 ---@field default any Default value for this config
----@field values any[] Value options
+---@field values any[]? Value options
 
 ---@class Version
 local Version = {}
@@ -217,13 +218,13 @@ function Version:major() end
 ---@field sha256 string sha256 of the patch
 
 ---@class PackageCheckOptionConfig
----@field defines string Macro defines
----@field languages LanguageStandard Language
+---@field defines string? Macro defines
+---@field languages LanguageStandard? Language
 ---@field [string] any Others
 
 ---@class PackageCheckOption
----@field includes string Include file
----@field configs PackageCheckOptionConfig Config
+---@field includes string|string[]? Include files
+---@field configs PackageCheckOptionConfig? Config
 
 ---@class PackageCheckSnippet
 ---@field test string Checked snippet

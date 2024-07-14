@@ -11,6 +11,16 @@
 function package(name) end
 
 ---
+---Define package configuration
+---
+---[Open in browser](https://xmake.io/#/manual/package_dependencies?id=package)
+---
+---@param name string Package name
+---@param func? fun(): nil Package scoped function
+---@return nil
+function package(name, func) end
+
+---
 ---**Scoped: package**
 ---
 ---Set package homepage
@@ -51,7 +61,7 @@ function set_kind(kind) end
 ---[Open in browser](https://xmake.io/#/manual/package_dependencies?id=packageset_urls)
 ---
 ---@param url string Package url
----@param option? PackageUrlOption Option
+---@param option? PackageUrlOption|string Option
 ---@return nil
 function set_urls(url, option) end
 
@@ -63,7 +73,7 @@ function set_urls(url, option) end
 ---[Open in browser](https://xmake.io/#/manual/package_dependencies?id=packageadd_urls)
 ---
 ---@param url string Package url
----@param option? PackageUrlOption Option
+---@param option? PackageUrlOption|string Option
 ---@return nil
 function add_urls(url, option) end
 
@@ -237,6 +247,17 @@ function on_load(func) end
 ---
 ---**Scoped: package**
 ---
+---Load package configuration
+---
+---[Open in browser](https://xmake.io/#/manual/package_dependencies?id=packageon_load)
+---
+---@param ... Platform|PackageHook Function to run when loading
+---@return nil
+function on_load(...) end
+
+---
+---**Scoped: package**
+---
 ---Fetch package libraries
 ---
 ---[Open in browser](https://xmake.io/#/manual/package_dependencies?id=packageon_fetch)
@@ -247,7 +268,16 @@ function on_load(func) end
 function on_fetch(os, func) end
 
 ---
----TODO: `on_install(env1, env2, func)`
+---**Scoped: package**
+---
+---Fetch package libraries
+---
+---[Open in browser](https://xmake.io/#/manual/package_dependencies?id=packageon_fetch)
+---
+---@param func PackageOptHook Function to run when fetching
+---@return nil
+function on_fetch(func) end
+
 ---
 ---**Scoped: package**
 ---
@@ -258,6 +288,17 @@ function on_fetch(os, func) end
 ---@param func PackageHook Function to run when installing
 ---@return nil
 function on_install(func) end
+
+---
+---**Scoped: package**
+---
+---Install package
+---
+---[Open in browser](https://xmake.io/#/manual/package_dependencies?id=packageon_install)
+---
+---@param ... Platform|PackageHook Function to run when installing
+---@return nil
+function on_install(...) end
 
 ---
 ---**Scoped: package**

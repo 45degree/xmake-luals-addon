@@ -11,6 +11,16 @@
 function rule(name) end
 
 ---
+---Defining rules
+---
+---[Open in browser](https://xmake.io/#/manual/custom_rule?id=rule)
+---
+---@param name string Rule name
+---@param func? fun(): nil Rule scoped function
+---@return nil
+function rule(name, func) end
+
+---
 ---**Scoped: rule**
 ---
 ---Adding rule dependencies
