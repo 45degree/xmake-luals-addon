@@ -163,18 +163,42 @@ function os.exec(program, ...) end
 function os.execv(program, argv, opts) end
 
 ---
---- Run and get the program output
+--- Quietly running native shell commands and getting output
+---
+--- Similar to the `os.run` interface, the only difference is that after executing the shell program,
+--- this interface will get the execution result of the shell program, which is equivalent to redirecting the output.
+---
+--- You can get the contents of stdout, stderr at the same time
+--- 
+--- @example
+--- ```lua
+--- local outdata, errdata = os.iorun("echo hello xmake!")
+--- ```
+--- @endexample
 ---
 --- @param program string format command string
---- @vararg any
-function os.iorun(program, ...) end
+--- @param opt? table options
+--- @return string # content of stdout
+--- @return string # content of stderr
+function os.iorun(program, opt) end
 
 ---
---- Run and get the program output with parameter list
+--- Run the native shell command quietly and get the output with a list of parameters
+---
+--- Similar to `os.iorun`, just the way to pass arguments is passed through the argument list, not the string command
+---
+--- @example
+--- ```lua
+--- local outdata, errdata = os.iorunv("echo", {"hello", "xmake!"})
+--- local outdata, errdata = os.iorunv("echo", {"hello", "xmake!"}, {envs = {PATH="..."}})
+--- ```
+--- @endexample
 ---
 --- @param program string command string
 --- @param argv string[] command parameters
---- @param opt any options
+--- @param opt? table options
+--- @return string # content of stdout
+--- @return string # content of stderr
 function os.iorunv(program, argv, opt) end
 
 ---
