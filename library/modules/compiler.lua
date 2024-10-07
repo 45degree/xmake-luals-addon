@@ -78,9 +78,10 @@ function compiler.compcmd(sourcefile, objfile, opts) end
 ---
 --- @param sourcefile string|xmake.path source file path
 --- @param objfile string|xmake.path object file path
+--- @param opts? table configurations
 --- @return string #compiler program
 --- @return string[] #compile arguments
-function compiler.compargv(sourcefile, objfile) end
+function compiler.compargv(sourcefile, objfile, opts) end
 
 --- Get compilation options
 ---
