@@ -7,8 +7,9 @@
 ---[Open in browser](https://xmake.io/#/manual/plugin_task?id=task)
 ---
 ---@param name string Task name
+---@param func? fun(): nil Task scoped function
 ---@return nil
-function task(name) end
+function task(name, func) end
 
 ---
 ---End defining plugins or tasks

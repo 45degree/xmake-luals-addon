@@ -590,6 +590,17 @@ function after_run(func) end
 ---
 ---**Scoped: target**
 ---
+---Run custom script after loading target
+---
+---[Open in browser](https://xmake.io/#/manual/project_target?id=targetafter_run)
+---
+---@param func TargetHook Function to run after loading target
+---@return nil
+function after_load(func) end
+
+---
+---**Scoped: target**
+---
 ---Set pre-compiled c header file
 ---
 ---[Open in browser](https://xmake.io/#/manual/project_target?id=targetset_pcheader)
