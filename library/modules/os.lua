@@ -140,6 +140,13 @@ function os.isexec(path) end
 function os.run(str, ...) end
 
 ---
+--- Quietly run command and echo verbose info if [-v|--verbose] option is enabled
+---
+--- @param str string format command string
+--- @vararg any
+function os.vrun(str, ...) end
+
+---
 ---	Quiet running program with parameter list
 ---
 --- @param program string command string
@@ -148,19 +155,42 @@ function os.run(str, ...) end
 function os.runv(program, argv, opts) end
 
 ---
----	Evoke Run Program
+---	Quiet running program with parameter list and echo verbose info if [-v|--verbose] option is enabled
+---
+--- @param program string command string
+--- @param argv string[] command parameters
+--- @param opts any options
+function os.vrunv(program, argv, opts) end
+
+---
+--- Execute command and echo verbose info
 ---
 --- @param program string format command string
 --- @vararg any
 function os.exec(program, ...) end
 
 ---
----	Echo running program with parameter list
+--- Execute command and echo verbose info if [-v|--verbose] option is enabled
+---
+--- @param program string format command string
+--- @vararg any
+function os.vexec(program, ...) end
+
+---
+---	Execute command with arguments list and echo verbose info
 ---
 --- @param program string command string
 --- @param argv string[] command parameters
 --- @param opts any options
 function os.execv(program, argv, opts) end
+
+---
+---	Execute command with arguments list and echo verbose info if [-v|--verbose] option is enabled
+---
+--- @param program string command string
+--- @param argv string[] command parameters
+--- @param opts any options
+function os.vexecv(program, argv, opts) end
 
 ---
 --- Quietly running native shell commands and getting output
