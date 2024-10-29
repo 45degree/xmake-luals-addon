@@ -252,7 +252,7 @@ function add_imports(name, ...) end
 ---[Open in browser](https://xmake.io/#/manual/project_target?id=targetadd_rules)
 ---
 ---@param name string Rule name
----@param ... string Rule names
+---@param ... any Rule names
 ---@return nil
 function add_rules(name, ...) end
 
