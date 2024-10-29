@@ -106,8 +106,10 @@ function Target:filename() end
 ---
 ---[Open in browser](https://xmake.io/#/manual/target_instance?id=targetinstalldir)
 ---
+---@param path? string|xmake.path subpath under install directory
+---
 ---@return string
-function Target:installdir() end
+function Target:installdir(path) end
 
 ---
 --- Get auto-generated catalog
