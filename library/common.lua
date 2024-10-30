@@ -1,6 +1,9 @@
 ---@meta
 ---xmake version: 2.7.7
 
+--- Global variable for xmake
+_g = _G
+
 ---Supported operation system
 ---@alias OperationSystem string|"windows"|"linux"|"android"|"macosx"|"ios"
 
