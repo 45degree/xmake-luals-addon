@@ -1455,3 +1455,45 @@ function add_filegroups(group, option) end
 ---@param ... ExceptionType Exception types
 ---@return nil
 function set_exceptions(type, ...) end
+
+---@class xmake.test_opts
+---@field runargs? string|string[]
+---@field rundir? string|xmake.path
+---@field runenvs? table<string, string>
+---@field pass_outputs? string|string[] The test passes if the outputs match
+---@field fail_outputs? string|string[] If the outputs match, the test fails
+---@field trim_output? boolean Truncate the blank characters before matching.
+---@field plain? boolean Disable lua pattern matching and only do the most basic flat text matching.
+---@field group? string Set test group
+
+---
+--- **Scoped: target**
+---
+--- Add test case
+---
+---@param name string name
+---@param opts? xmake.test_opts|string
+function add_tests(name, opts) end
+
+--- **Scoped: target**
+---
+--- Custom test script
+---
+--- @param func fun(target: Target, opts: xmake.test_opts)
+function on_test(func) end
+
+---
+--- **Scoped: target**
+---
+--- Run custom script before running test
+---
+--- @param func fun(target: Target, opts: xmake.test_opts) Function to run before running test
+function before_test(func) end
+
+---
+--- **Scoped: target**
+---
+--- Run custom script after running test
+---
+--- @param func fun(target: Target, opts: xmake.test_opts) Function to run after running test
+function after_test(func) end
